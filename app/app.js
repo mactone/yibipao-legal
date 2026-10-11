@@ -172,12 +172,15 @@
       // No user content is assigned to innerHTML.
       const graphic = create("div", "idea-graphic");
       graphic.setAttribute("aria-hidden", "true");
-      const icons = { "apple-watch-app": "watch", "same-route": "route", "collaborative-art": "crew", garmin: "watch", "street-atlas": "map", "crew-territory": "crew" };
-      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-      svg.setAttribute("viewBox", "0 0 80 80");
-      const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
-      use.setAttribute("href", "#idea-" + (icons[idea.id] || "route"));
-      svg.append(use); graphic.append(svg);
+      const artPositions = { "apple-watch-app": [0,0], "same-route": [50,0], "collaborative-art": [100,0], garmin: [0,100], "street-atlas": [50,100], "crew-territory": [100,100] };
+      const position = artPositions[idea.id];
+      if (position) {
+        graphic.classList.add("idea-art");
+        graphic.style.backgroundPosition = position[0] + "% " + position[1] + "%";
+      } else {
+        graphic.classList.add("idea-art-fallback");
+        graphic.textContent = "新玩法";
+      }
       article.append(graphic);
       heading.append(
         create("h4", "", idea.title),

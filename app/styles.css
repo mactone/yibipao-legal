@@ -9,3 +9,8 @@
 @media(min-width:1600px){.hero-inner{min-height:860px}}
 @media(min-width:701px) and (max-width:1050px){.hero-inner{min-height:720px}.hero-art{width:60%;top:80px}.cooperation{right:8px}}
 @media(min-width:1051px){.hero-inner{min-height:920px}.hero-art{top:110px;width:61%}.hero-art figcaption{top:20px}}
+/* Feature artwork follows the illustrations in the approved concept. */
+.suggestion-row .idea-graphic.idea-art{width:100%;height:auto;aspect-ratio:1;background-image:url('./assets/idea-art-v2.png');background-size:300% 200%;background-repeat:no-repeat;background-color:var(--cream);border-radius:8px}
+.idea-graphic.idea-art-fallback{font-family:ClubTC,sans-serif;font-size:28px}
+.suggestion-row{padding:12px;min-height:425px;border-color:#e4e5d5;background:var(--cream)}
+.suggestion-row>div:not(.idea-graphic){padding:0 6px}.suggestion-row .vote-button{width:calc(100% - 12px);margin:0 6px}
